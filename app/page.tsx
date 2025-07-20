@@ -42,15 +42,17 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/supermarket-shelves.jpg"
-            alt="Prateleiras de supermercado organizadas - Serviços de Promotoria BCM ACTION"
+            src="/images/frigorifico-com-alimentos.jpg"
+            alt="Interior de supermercado moderno com prateleiras organizadas - Serviços de Promotoria BCM ACTION"
             fill
-            className="object-cover opacity-10"
+            className="object-cover opacity-20"
             priority
           />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
+        {/* Adicionar este overlay gradiente */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#8B0000]/60 via-[#8B0000]/40 to-[#A00000]/60"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative z-20">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-20 2xl:gap-24">
             <motion.div
               className="flex flex-col items-center lg:items-start space-y-6 sm:space-y-8 text-center lg:text-left w-full lg:w-1/2"
               initial={{ opacity: 0, x: -60 }}
@@ -74,12 +76,12 @@ export default function Home() {
                   alt="BCM ACTION Logo"
                   width={240}
                   height={240}
-                  className="h-auto w-32 sm:w-40 md:w-48 lg:w-52 xl:w-60"
+                  className="h-auto w-24 sm:w-32 md:w-40 lg:w-48 xl:w-56 2xl:w-64"
                 />
               </motion.div>
 
               <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -94,7 +96,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-light text-white/90 tracking-wide uppercase text-center lg:text-left">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/90 tracking-wide uppercase text-center lg:text-left">
                   A solução completa para seu negócio
                 </h3>
               </motion.div>
@@ -125,7 +127,7 @@ export default function Home() {
 
                   <motion.form
                     action={formAction}
-                    className="space-y-4 sm:space-y-6"
+                    className="space-y-4 sm:space-y-6 max-w-lg mx-auto lg:mx-0"
                     variants={staggerContainer}
                     initial="initial"
                     animate="animate"
@@ -186,7 +188,7 @@ export default function Home() {
                         <Button
                           type="submit"
                           disabled={isPending}
-                          className="w-full h-12 sm:h-14 bg-gradient-to-r from-[#8B0000] to-[#A00000] hover:from-[#A00000] hover:to-[#8B0000] text-white border-0 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium shadow-lg transition-all duration-300 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full sm:w-auto h-12 sm:h-14 lg:h-16 bg-gradient-to-r from-[#8B0000] to-[#A00000] hover:from-[#A00000] hover:to-[#8B0000] text-white border-0 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium shadow-lg transition-all duration-300 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {isPending ? "Enviando..." : "Enviar Solicitação"}
                         </Button>
@@ -201,15 +203,17 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <AnimatedSection className="py-12 sm:py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <motion.div className="text-center mb-12 sm:mb-16" {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#8B0000] mb-4">Serviços</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-[#8B0000] mb-4">
+              Serviços
+            </h2>
             <p className="text-lg sm:text-xl text-gray-600 font-light">Soluções completas para sua empresa</p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-10 max-w-7xl mx-auto"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -270,7 +274,7 @@ export default function Home() {
                     orcamentoSection.scrollIntoView({ behavior: "smooth" })
                   }
                 }}
-                className="h-12 sm:h-14 px-8 sm:px-12 bg-gradient-to-r from-[#8B0000] to-[#A00000] hover:from-[#A00000] hover:to-[#8B0000] text-white rounded-xl sm:rounded-2xl text-base sm:text-lg font-medium shadow-lg"
+                className="w-full sm:w-auto h-12 sm:h-14 lg:h-16 px-8 sm:px-12 bg-gradient-to-r from-[#8B0000] to-[#A00000] hover:from-[#A00000] hover:to-[#8B0000] text-white rounded-xl sm:rounded-2xl text-base sm:text-lg font-medium shadow-lg"
               >
                 Solicitar Orçamento
               </Button>
@@ -280,16 +284,18 @@ export default function Home() {
       </AnimatedSection>
 
       {/* What We Offer Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white relative">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white relative">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/cleaning-services.jpg"
-            alt="Serviços de Limpeza e Conservação de Ambiente - BCM ACTION"
+            src="/images/escritorio-moderno.jpg"
+            alt="Escritório moderno e profissional - Serviços Administrativos BCM ACTION"
             fill
-            className="object-cover opacity-10"
+            className="object-cover opacity-20"
           />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Adicionar este overlay gradiente */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#8B0000]/70 via-[#A00000]/50 to-[#8B0000]/70"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-20">
           <motion.div
             className="text-center mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -297,11 +303,10 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-4">
               O Que Oferecemos <br />
               Para Sua Empresa
             </h2>
-            <p className="text-lg sm:text-xl font-light opacity-90">Diferenciais que fazem a diferença</p>
           </motion.div>
 
           <motion.div
@@ -331,15 +336,17 @@ export default function Home() {
       </section>
 
       {/* Where We Serve Section */}
-      <AnimatedSection className="py-12 sm:py-16 lg:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <motion.div className="text-center mb-12 sm:mb-16" {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#8B0000] mb-4">Onde Atendemos</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-[#8B0000] mb-4">
+              Onde Atendemos
+            </h2>
             <p className="text-lg sm:text-xl text-gray-600 font-light">Nossa área de atuação</p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -385,7 +392,7 @@ export default function Home() {
                     orcamentoSection.scrollIntoView({ behavior: "smooth" })
                   }
                 }}
-                className="h-12 sm:h-14 px-8 sm:px-12 bg-gradient-to-r from-[#8B0000] to-[#A00000] hover:from-[#A00000] hover:to-[#8B0000] text-white rounded-xl sm:rounded-2xl text-base sm:text-lg font-medium shadow-lg"
+                className="w-full sm:w-auto h-12 sm:h-14 lg:h-16 px-8 sm:px-12 bg-gradient-to-r from-[#8B0000] to-[#A00000] hover:from-[#A00000] hover:to-[#8B0000] text-white rounded-xl sm:rounded-2xl text-base sm:text-lg font-medium shadow-lg"
               >
                 Solicitar Orçamento
               </Button>
@@ -395,7 +402,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* About Us Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gray-600/80 relative">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gray-600/80 relative">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/professional-team-background.jpg"
@@ -404,9 +411,11 @@ export default function Home() {
             className="object-cover opacity-5"
           />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Adicionar este overlay gradiente */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-gray-600/80 via-gray-700/60 to-gray-600/80"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-20">
           <motion.h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-8 sm:mb-12 text-center lg:text-left"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-8 sm:mb-12 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -416,7 +425,7 @@ export default function Home() {
           </motion.h2>
 
           <motion.div
-            className="max-w-4xl mx-auto lg:mx-0 space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed"
+            className="max-w-4xl mx-auto lg:mx-0 xl:max-w-5xl space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -424,7 +433,7 @@ export default function Home() {
           >
             <motion.div
               variants={fadeInUp}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-sm"
             >
               <h3 className="text-xl sm:text-2xl font-medium text-[#8B0000] mb-4">Sobre Nós</h3>
               <p className="font-light text-gray-700">
@@ -437,7 +446,7 @@ export default function Home() {
 
             <motion.div
               variants={fadeInUp}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-sm"
             >
               <h3 className="text-xl sm:text-2xl font-medium text-[#8B0000] mb-4">Nossa Missão</h3>
               <p className="font-light text-gray-700">
@@ -449,7 +458,7 @@ export default function Home() {
 
             <motion.div
               variants={fadeInUp}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-sm"
             >
               <h3 className="text-xl sm:text-2xl font-medium text-[#8B0000] mb-4">Nossos Valores</h3>
               <p className="font-light text-gray-700">
@@ -505,13 +514,13 @@ export default function Home() {
           >
             BCM ACTION SERVIÇOS - CNPJ: 52.418.107/0001-58
             <br />
-            Copyright © 2023 - Todos os Direitos Reservados.
+            Copyright © 2025 - Todos os Direitos Reservados.
           </motion.p>
         </div>
       </motion.footer>
 
       {/* WhatsApp Button */}
-      <WhatsAppButton />
+      <WhatsAppButton className="bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8" />
     </main>
   )
 }
