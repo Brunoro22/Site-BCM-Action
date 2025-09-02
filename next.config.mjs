@@ -12,9 +12,6 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  experimental: {
-    optimizeCss: true,
-  },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
