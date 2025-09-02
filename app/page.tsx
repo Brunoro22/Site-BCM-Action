@@ -76,7 +76,7 @@ export default function Home() {
                   alt="BCM ACTION Logo"
                   width={240}
                   height={240}
-                  className="h-auto w-24 sm:w-32 md:w-40 lg:w-48 xl:w-56 2xl:w-64"
+                  className="h-auto w-48 sm:w-56 md:w-64 lg:w-96 xl:w-[28rem] 2xl:w-[32rem]"
                 />
               </motion.div>
 
@@ -528,7 +528,7 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="relative z-30 mx-auto max-w-2xl mb-8">
               <motion.div
                 whileHover={{ y: -12, scale: 1.03, rotateY: 5 }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 className="bg-white/15 backdrop-blur-3xl rounded-[2rem] p-8 sm:p-10 shadow-2xl border border-white/30 relative overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
               >
@@ -668,22 +668,22 @@ export default function Home() {
 
       {/* Footer */}
       <motion.footer
-        className="bg-gradient-to-r from-[#8B0000] to-[#A00000] text-white py-12 sm:py-16"
+        className="bg-gradient-to-r from-[#8B0000] to-[#A00000] text-white py-12 sm:py-16 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center relative">
           <motion.div
-            className="mb-6 sm:mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="mb-6 sm:mb-8 relative z-50"
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             whileHover={{
-              scale: 1.1,
-              y: -4,
+              scale: 1.15,
+              y: -8,
               transition: { type: "spring", stiffness: 400, damping: 25 },
             }}
             className="cursor-pointer"
@@ -694,14 +694,14 @@ export default function Home() {
             <Image
               src="/images/bcm-logo-white.png"
               alt="BCM ACTION Logo"
-              width={120}
-              height={120}
-              className="h-auto w-20 sm:w-24 md:w-28"
+              width={240}
+              height={240}
+              className="h-auto w-24 sm:w-32 md:w-40 lg:w-48 xl:w-56 2xl:w-64 drop-shadow-2xl"
             />
           </motion.div>
 
           <motion.p
-            className="text-center font-light opacity-90 text-sm sm:text-base"
+            className="text-center font-light opacity-90 text-sm sm:text-base relative z-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
