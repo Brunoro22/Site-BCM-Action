@@ -4,15 +4,19 @@ import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
-export default function WhatsAppButton() {
+interface WhatsAppButtonProps {
+  className?: string
+}
+
+export default function WhatsAppButton({ className }: WhatsAppButtonProps) {
   const handleWhatsAppClick = () => {
-    // Substitua pelo número de WhatsApp real
-    window.open("https://wa.me/5500000000000", "_blank")
+    const message = encodeURIComponent("Olá! Gostaria de solicitar um orçamento para os serviços da BCM ACTION.")
+    window.open(`https://wa.me/5521999999999?text=${message}`, "_blank")
   }
 
   return (
     <motion.div
-      className="fixed bottom-8 right-8 z-50"
+      className={`fixed bottom-8 right-8 z-50 ${className || ""}`}
       initial={{ scale: 0, rotate: -180 }}
       animate={{ scale: 1, rotate: 0 }}
       transition={{
@@ -42,6 +46,7 @@ export default function WhatsAppButton() {
         <Button
           onClick={handleWhatsAppClick}
           className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full p-4 shadow-2xl transition-all duration-300 border-0"
+          aria-label="Entrar em contato via WhatsApp"
         >
           <motion.div
             animate={{ rotate: [0, 15, -15, 0] }}
