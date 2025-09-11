@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col overflow-hidden bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white">
+      <section className="relative bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white min-h-screen">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/frigorifico-com-alimentos.jpg"
@@ -49,8 +49,7 @@ export default function Home() {
             priority
           />
         </div>
-        {/* Adicionar este overlay gradiente */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#8B0000]/60 via-[#8B0000]/40 to-[#A00000]/60"></div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#8B0000]/80 via-[#8B0000]/70 to-[#A00000]/80"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative z-20">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-20 2xl:gap-24">
             <motion.div
@@ -81,13 +80,13 @@ export default function Home() {
               </motion.div>
 
               <motion.h1
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light leading-tight text-white drop-shadow-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 Serviços Especializados <br />
-                Para Seu <span className="font-medium text-[#FF8C00]">Negócio</span>
+                Para Seu <span className="font-medium text-[#FF8C00] drop-shadow-2xl">Negócio</span>
               </motion.h1>
 
               <motion.div
@@ -96,7 +95,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/90 tracking-wide uppercase text-center lg:text-left">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/95 tracking-wide uppercase text-center lg:text-left drop-shadow-xl">
                   A solução completa para seu negócio
                 </h3>
               </motion.div>
@@ -284,24 +283,51 @@ export default function Home() {
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <Button
+              <button
                 onClick={() => {
                   const orcamentoSection = document.querySelector('[data-section="orcamento"]')
                   if (orcamentoSection) {
                     orcamentoSection.scrollIntoView({ behavior: "smooth" })
                   }
                 }}
-                className="w-full sm:w-auto h-14 sm:h-16 lg:h-18 px-12 sm:px-16 bg-gradient-to-r from-[#8B0000] via-[#A00000] to-[#8B0000] hover:from-[#A00000] hover:via-[#B91C1C] hover:to-[#A00000] text-white border-0 rounded-2xl sm:rounded-3xl text-lg sm:text-xl font-semibold shadow-2xl transition-all duration-300 hover:shadow-3xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700"
+                style={{
+                  background: "linear-gradient(to right, #8B0000, #A00000, #8B0000)",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "1.5rem",
+                  padding: "1rem 3rem",
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  position: "relative",
+                  overflow: "hidden",
+                  minHeight: "3.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "linear-gradient(to right, #A00000, #B91C1C, #A00000)"
+                  e.target.style.boxShadow = "0 25px 50px -12px rgba(139, 0, 0, 0.4)"
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "linear-gradient(to right, #8B0000, #A00000, #8B0000)"
+                  e.target.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
               >
-                <span className="relative z-10">Solicitar Orçamento</span>
-              </Button>
+                <span style={{ color: "white", fontWeight: "600", position: "relative", zIndex: 10 }}>
+                  Solicitar Orçamento
+                </span>
+              </button>
             </motion.div>
           </motion.div>
         </div>
       </AnimatedSection>
 
       {/* What We Offer Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white relative">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-[#8B0000] via-[#A00000] to-[#8B0000] text-white relative min-h-[600px]">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/escritorio-moderno.jpg"
@@ -310,8 +336,7 @@ export default function Home() {
             className="object-cover opacity-20"
           />
         </div>
-        {/* Adicionar este overlay gradiente */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#8B0000]/70 via-[#A00000]/50 to-[#8B0000]/70"></div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#8B0000]/90 via-[#A00000]/80 to-[#8B0000]/90"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-20">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -320,7 +345,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-4 text-white drop-shadow-2xl">
               O Que Oferecemos <br />
               Para Sua Empresa
             </h2>
@@ -410,17 +435,44 @@ export default function Home() {
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <Button
+              <button
                 onClick={() => {
                   const orcamentoSection = document.querySelector('[data-section="orcamento"]')
                   if (orcamentoSection) {
                     orcamentoSection.scrollIntoView({ behavior: "smooth" })
                   }
                 }}
-                className="w-full sm:w-auto h-14 sm:h-16 lg:h-18 px-12 sm:px-16 bg-gradient-to-r from-[#8B0000] via-[#A00000] to-[#8B0000] hover:from-[#A00000] hover:via-[#B91C1C] hover:to-[#A00000] text-white border-0 rounded-2xl sm:rounded-3xl text-lg sm:text-xl font-semibold shadow-2xl transition-all duration-300 hover:shadow-3xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700"
+                style={{
+                  background: "linear-gradient(to right, #8B0000, #A00000, #8B0000)",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "1.5rem",
+                  padding: "1rem 3rem",
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  position: "relative",
+                  overflow: "hidden",
+                  minHeight: "3.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "linear-gradient(to right, #A00000, #B91C1C, #A00000)"
+                  e.target.style.boxShadow = "0 25px 50px -12px rgba(139, 0, 0, 0.4)"
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "linear-gradient(to right, #8B0000, #A00000, #8B0000)"
+                  e.target.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
               >
-                <span className="relative z-10">Solicitar Orçamento</span>
-              </Button>
+                <span style={{ color: "white", fontWeight: "600", position: "relative", zIndex: 10 }}>
+                  Solicitar Orçamento
+                </span>
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -720,29 +772,23 @@ export default function Home() {
   )
 }
 
-function AnimatedSection({ children, className }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
-
-  return (
-    <motion.section
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      {children}
-    </motion.section>
-  )
-}
-
 function ServiceCard({ title, description, borderColor }) {
+  const getBgColor = (borderColor) => {
+    switch (borderColor) {
+      case "border-[#8B0000]":
+        return "bg-[#8B0000]"
+      case "border-[#FF8C00]":
+        return "bg-[#FF8C00]"
+      default:
+        return "bg-[#8B0000]" // fallback
+    }
+  }
+
   return (
     <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
       <Card className="bg-white shadow-xl border-0 h-full min-h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
         <CardContent className="p-6 sm:p-8">
-          <div className={`w-10 sm:w-12 h-1 ${borderColor.replace("border-", "bg-")} rounded-full mb-4 sm:mb-6`}></div>
+          <div className={`w-10 sm:w-12 h-1 ${getBgColor(borderColor)} rounded-full mb-4 sm:mb-6`}></div>
           <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-4 sm:mb-6">{title}</h3>
           <div className="space-y-2 sm:space-y-3">
             {description.map((item, index) => (
@@ -758,11 +804,22 @@ function ServiceCard({ title, description, borderColor }) {
 }
 
 function LocationCard({ title, cities, borderColor }) {
+  const getBgColor = (borderColor) => {
+    switch (borderColor) {
+      case "border-[#8B0000]":
+        return "bg-[#8B0000]"
+      case "border-[#FF8C00]":
+        return "bg-[#FF8C00]"
+      default:
+        return "bg-[#8B0000]" // fallback
+    }
+  }
+
   return (
     <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
       <Card className="bg-white shadow-xl border-0 h-full rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
         <CardContent className="p-6 sm:p-8">
-          <div className={`w-10 sm:w-12 h-1 ${borderColor.replace("border-", "bg-")} rounded-full mb-4 sm:mb-6`}></div>
+          <div className={`w-10 sm:w-12 h-1 ${getBgColor(borderColor)} rounded-full mb-4 sm:mb-6`}></div>
           <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-4 sm:mb-6">{title}</h3>
           <p className="text-sm sm:text-base text-gray-600 font-light leading-relaxed">{cities}</p>
         </CardContent>
@@ -789,5 +846,22 @@ function OfferItem({ text }) {
       </motion.div>
       <span className="font-light text-base sm:text-lg">{text}</span>
     </motion.div>
+  )
+}
+
+function AnimatedSection({ children, className }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
+  return (
+    <motion.section
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      {children}
+    </motion.section>
   )
 }
