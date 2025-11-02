@@ -1,0 +1,127 @@
+/*
+Theme Name: BCM ACTION Services
+Theme URI: https://bcm-action.com
+Description: Tema WordPress profissional para BCM ACTION - Serviços Especializados
+Version: 1.0.0
+Author: BCM ACTION
+Author URI: https://bcm-action.com
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bcm-action
+Domain Path: /languages
+*/
+
+:root {
+  --primary-color: #8b0000;
+  --primary-dark: #6b0000;
+  --accent-color: #ff8c00;
+  --text-color: #333333;
+  --light-text: #666666;
+  --bg-light: #f9f9f9;
+  --bg-white: #ffffff;
+  --border-color: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+button,
+input[type="submit"] {
+  background: linear-gradient(to right, #8b0000, #a00000, #8b0000);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(to right, #a00000, #b91c1c, #a00000);
+  box-shadow: 0 25px 50px -12px rgba(139, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Scrollbar customizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
